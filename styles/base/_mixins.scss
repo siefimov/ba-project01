@@ -30,20 +30,6 @@ $maxWidthContainer: 1200;
   }
 }
 
-// Example
-// .block {
-//    @include adaptive-value("padding", 50, 20, 0);
-//    same as: padding: calc(20px + (50- 20) * ((100vw - 320px) / (1920 - 320)));
-// }
-
-/* ======= mixin for adptive font ========= */
-/*-
-font-size: calc(24px + 16 * ((100vw - 320px) / (1520 - 320)));
-	24px - мін шрифт, який хо4емо мати на екрані 320px для відповідного тегу
-	16 - від розміру шрифта по макету віднімаємо мінімальний шрифт (40 - 24 = 16)
-	100vw - вся ширина
-	1520 - ширина усього макета (полотна макета)
--*/
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;

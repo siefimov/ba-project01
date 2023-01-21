@@ -1,7 +1,3 @@
-/* -------------------- */
-/* --- BASE STYLES --- */
-/* -------------------- */
-
 html,
 body {
   min-width: 100%;
@@ -23,7 +19,7 @@ body {
   flex-direction: column;
   overflow: clip;
 }
-/* bounding continer */
+
 [class*="__container"] {
   max-width: $width-container;
   margin: 0 auto;
