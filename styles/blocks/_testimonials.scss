@@ -1,0 +1,111 @@
+.testimonails {
+  margin-bottom: 120px;
+  &__container {
+    background: #ccddff;
+    border-radius: 50px;
+    padding: 80px 70px;
+  }
+  &__title {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    text-align: center;
+    color: #4b5d68;
+    margin-bottom: 80px;
+  }
+}
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__item {
+    max-width: 465px;
+    width: 100%;
+    padding: 50px 30px;
+
+    background: #ffffff;
+    border: 1px solid #9c69e2;
+    box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+    border-radius: 50px;
+
+    display: flex;
+  }
+  &__item-avatar {
+    min-width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    margin-right: 15px;
+  }
+  &__item-img {
+    width: 100%;
+    border-radius: 45px;
+    // height: 100%;
+  }
+
+  &__item-author-name {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #212353;
+    margin-bottom: 2px;
+  }
+  &__item-website {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    color: #9c69e2;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+  &__item-text {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #4b5d68;
+  }
+}
+
+@media (max-width: 1069px) {
+  .reviews {
+    justify-content: center;
+    &__item {
+      margin-bottom: 30px;
+    }
+  }
+  .testimonails__container {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
+@media (max-width: 768px) {
+  .testimonails__container {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
+@media (max-width:410px){
+    .reviews__item{
+      flex-direction: column;
+    }
+    .reviews__item-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 45px;
+      margin-right: 15px;
+    }
+}
+@media (max-width: 320px) {
+  .testimonails__container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

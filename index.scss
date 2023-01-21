@@ -1,1 +1,13 @@
+@import "./styles/base/fonts";
+@import "./styles/base/reset";
+@import "./styles/base/functions";
+@import "./styles/base/mixins";
+@import "./styles/base/vars";
+@import "./styles/base/common";
 
+@import "./styles/blocks/header";
+@import "./styles/blocks/first-screen";
+@import "./styles/blocks/about";
+@import "./styles/blocks/feature";
+@import "./styles/blocks/testimonials";
+@import "./styles/blocks/footer";
