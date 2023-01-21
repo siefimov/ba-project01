@@ -1,0 +1,58 @@
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+/* mixin for adaptive value */
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    // only if less than Container
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
+    }
+  } @else if $type==2 {
+    // only if more than Container
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  } @else {
+    // завжди
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
+// Example
+// .block {
+//    @include adaptive-value("padding", 50, 20, 0);
+//    same as: padding: calc(20px + (50- 20) * ((100vw - 320px) / (1920 - 320)));
+// }
+
+/* ======= mixin for adptive font ========= */
+/*-
+font-size: calc(24px + 16 * ((100vw - 320px) / (1520 - 320)));
+	24px - мін шрифт, який хо4емо мати на екрані 320px для відповідного тегу
+	16 - від розміру шрифта по макету віднімаємо мінімальний шрифт (40 - 24 = 16)
+	100vw - вся ширина
+	1520 - ширина усього макета (полотна макета)
+-*/
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
